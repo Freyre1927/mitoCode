@@ -1,6 +1,6 @@
+
 package hackerrank;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -14,25 +14,28 @@ public class Anagrama {
       int[] contador = new int[26];
 
       for(int i = 0; i < string1.length();i++){
-         System.out.print(Arrays.toString(contador));
          contador[string1.charAt(i) - 'a']++;
+         System.out.println("for 1: " + Arrays.toString(contador));
       }
       for(int i = 0; i < string2.length(); i++){
-         System.out.print(Arrays.toString(contador));
          contador[string2.charAt(i) - 'a']--;
+         System.out.println("for 2: " + Arrays.toString(contador));
       }
       for(int i = 0; i < 26; i++){
-         System.out.println(Arrays.toString(contador));
+         System.out.println("contador : " + Arrays.toString(contador));
          if(contador[i] != 0){
             return false;
          }
       }
+      System.out.println("contador al final : " + Arrays.toString(contador));
       return true;
    }
 
    public static void main(String[] args) {
       Scanner scan = new Scanner(System.in);
+      System.out.println("digite una palabra : ");
       String a = scan.next();
+      System.out.println("digite otra palabra : ");
       String b = scan.next();
       scan.close();
       boolean ret = isAnagram(a, b);
